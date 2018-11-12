@@ -1,0 +1,124 @@
+%----------------------------------------------------------------------
+% This is a simple template for a document such as a project
+%----------------------------------------------------------------------
+\documentclass[a4paper]{article}
+\pagestyle{plain}
+
+%----------------------------------------------------------------------
+% First read in some definitions (e.g. for `\mmapic')
+%----------------------------------------------------------------------
+\usepackage{st116latex}
+
+\begin{document}
+
+%----------------------------------------------------------------------
+% Heading (change the format if you wish)
+%----------------------------------------------------------------------
+\begin{center}
+\LARGE
+\textbf{\huge Ashley's perfect \LaTeX\ Project 2018--2019}   % Insert title for your project
+\par
+\textbf{Ashley Chen}        % Insert your name
+\\
+\textbf{Data Science  1822440}      % Insert your degree and ID number
+\end{center}
+
+%----------------------------------------------------------------------
+% First section
+%----------------------------------------------------------------------
+\section{Introduction}
+Here is some typical text.
+It could contain simple formulae like $e^{i\pi}+1=0$ as well as 
+\emph{emphasised} text, \textbf{bold}, 
+\textsf{sans serif} or \texttt{typewriter} fonts.
+But the use of too many different fonts 
+\textsc{is Ugly \large \& Distracting!}
+
+%----------------------------------------------------------------------
+% Subsection
+%----------------------------------------------------------------------
+\subsection{Examples of graphics}
+
+%----------------------------------------------------------------------
+% Examples of Graphics
+%----------------------------------------------------------------------
+
+Here are some graphics (in PNG format); 
+the default height using \textsf{st116latex.sty} is 6cm: 
+\centerpic{cont.png}
+
+Here is the same plot with height set to 3cm: 
+\centerpic[3cm]{cont.png}
+
+You can include graphics in \emph{figures}, 
+which \LaTeX\ if necessary moves to a different position in the document.
+You may then refer to the figure in the main text using the commands
+\verb¬\label¬, \verb¬\ref¬ and \verb¬\pageref¬.
+\begin{figure}
+\centerpic[4cm]{cont.png}
+\label{figcont}   % optionally give the figure a label so you can refer to it
+\caption{Typical (optional) caption}   % optionally add a caption
+\end{figure}
+For example, figure \ref{figcont} on page \pageref{figcont}
+shows a 4 centimetre high contour plot.
+
+You can also include JPEGs:
+\centerpic[3cm]{babykiller.jpg}   % photo of a baby killer whale
+
+%----------------------------------------------------------------------
+% Using the picture environment
+%----------------------------------------------------------------------
+\subsection{Example using \LaTeX\ \texttt{picture} environment}
+
+Strips of height 1 and lengths $1, 2, \dots, n$ 
+can be arranged in a triangle,
+and two such triangles fit together to make a rectangle 
+with sides $n$ and $(n+1)$.
+The following diagram shows this for $n=5$:
+\begin{center}
+\setlength{\unitlength}{0.7cm}
+\begin{picture}(7,6)(-0.5,-0.5)
+\linethickness{0.05mm}
+\multiput(0,0)(1,0){7}{\line(0,1){5}}
+\multiput(0,0)(0,1){6}{\line(1,0){6}}
+\linethickness{0.7mm}
+\put(0,0){\line(0,1){5}}
+\put(6,0){\line(0,1){5}}
+\put(0,0){\line(1,0){6}}
+\put(0,5){\line(1,0){6}}
+\multiput(1,1)(1,1){4}{\line(1,0){1}}
+\multiput(1,0)(1,1){5}{\line(0,1){1}}
+\end{picture}
+\end{center}
+The area of the rectangle is $n(n+1)$, 
+so the area of each triangle is ${1\over2}n(n+1)$. \\
+Hence $1+2+\dots+n = {1\over2}n(n+1)$.
+
+
+%----------------------------------------------------------------------
+% Second section
+% (typically a project contains 3 to 6 sections).
+%----------------------------------------------------------------------
+\section{Next Section}
+More stuff here
+(a project typically contains 3--6 sections).
+
+\subsection{Subsection}
+Yet more stuff.
+Did you know that 
+\[
+2\sum_{k=0}^{17}\bigl(\sin(k\pi/12)-\cos(k\pi/5)\bigr)
+ = \sqrt0 +  \sqrt1 + \sqrt2 + \sqrt3 + \sqrt4 + \sqrt5 + \sqrt6\,?
+\]
+
+\subsection{Another subsection}
+The equation is $\alpha x^2 + \beta x + \gamma = 0$.
+
+%----------------------------------------------------------------------
+% Conclusion
+%----------------------------------------------------------------------
+\section{Summary \& Conclusions}
+It's usually a good idea to end with a summary of what you've found,
+your conclusions, and suggestions for possible future work.
+
+\end{document}
